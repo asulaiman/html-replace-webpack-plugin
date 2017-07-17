@@ -23,7 +23,7 @@ function HtmlReplaceWebpackPlugin(options)
           var replacement = option.replacement.apply(null, matches)
 
           // matches[0]: matching content string
-          htmlData = htmlData.replace(matches[0], replacement)
+          htmlData = htmlData.split(option.pattern).join(option.replacement)
         }
       }
       else
